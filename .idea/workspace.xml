@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d075f3b5-e456-46f2-8fcd-cfc4640c865a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.gitlab-ci.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="d075f3b5-e456-46f2-8fcd-cfc4640c865a" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -161,8 +157,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="651" />
-    <option name="y" value="34" />
+    <option name="x" value="1224" />
+    <option name="y" value="233" />
     <option name="width" value="1553" />
     <option name="height" value="979" />
   </component>
@@ -272,7 +268,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="651" y="34" width="1553" height="979" extended-state="0" />
+    <frame x="1224" y="233" width="1553" height="979" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20396039" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />

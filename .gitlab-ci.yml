@@ -1,19 +1,36 @@
-variables:
+
   PROJECT_GROUP: ${CI_PROJECT_NAMESPACE}
   PROJECT_NAME: ${CI_PROJECT_NAME}
 stages:
+  - build
+  - test
   - package
+# 定义 job
+job1:
+  stage: test
+  script:
+    - echo "I am job1"
+    - echo "I am in test stage"
+# 定义 job
+job2:
+  stage: build
+  script:
+    - echo "I am job2"
+    - echo ${CI_PROJECT_NAMESPACE}
+    - echo ${CI_PROJECT_NAME}
+    - echo ${DOCKER_REGISTRY}
+    - echo ${CI_REGISTRY}
+    - echo ${CI_BUILD_REF_NAME}
+    - echo ${RANCHER_URL_TEST_ENV}
+
 package:
-  image: ${DOCKER_REGISTRY}/env/dind:latest
   stage: package
   script:
-    - cp *.* docker/
-    - cd docker
-    - DOCKER_REPO=${DOCKER_REGISTRY}/${PROJECT_GROUP}/${PROJECT_NAME}:${CI_BUILD_REF_NAME}
+    - ls
+    - ip a
+    - DOCKER_REPO=${CI_REGISTRY}/${PROJECT_GROUP}/${PROJECT_NAME}:${CI_BUILD_REF_NAME}
+    - echo ${DOCKER_REPO}
     # build docker image
     - docker build -t ${DOCKER_REPO} .
     # push至docker registry
     - docker push ${DOCKER_REPO}
-  only:
-    - master
-    - tags
