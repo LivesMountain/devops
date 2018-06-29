@@ -1,4 +1,4 @@
-
+variables:
   PROJECT_GROUP: ${CI_PROJECT_NAMESPACE}
   PROJECT_NAME: ${CI_PROJECT_NAME}
 stages:
