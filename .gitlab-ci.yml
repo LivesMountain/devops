@@ -27,9 +27,6 @@ package:
   stage: package
   script:
     - ls
-    - cp *.* docker/
-    - cd docker
-    - ls
     - ip a
     - DOCKER_REPO=${CI_REGISTRY}/${PROJECT_GROUP}/${PROJECT_NAME}:${CI_BUILD_REF_NAME}
     - echo ${DOCKER_REPO}
