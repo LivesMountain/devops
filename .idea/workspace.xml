@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d075f3b5-e456-46f2-8fcd-cfc4640c865a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/devops/apps/ServerAccount/admin.py" afterPath="$PROJECT_DIR$/devops/apps/ServerAccount/admin.py" />
-      <change beforePath="$PROJECT_DIR$/devops/apps/ServerAccount/views.py" afterPath="$PROJECT_DIR$/devops/apps/ServerAccount/views.py" />
-    </list>
+    <list default="true" id="d075f3b5-e456-46f2-8fcd-cfc4640c865a" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,10 +14,12 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/devops/apps/ServerAccount/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="32" column="22" lean-forward="true" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="31" />
+            <state relative-caret-position="311">
+              <caret line="33" column="22" lean-forward="true" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
+                <marker date="1530501151538" expanded="true" signature="503:1722" ph="..." />
+                <marker date="1530501151538" expanded="true" signature="1047:1677" ph="..." />
               </folding>
             </state>
           </provider>
@@ -344,6 +343,8 @@
           <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
+            <marker date="1530501151538" expanded="true" signature="503:1722" ph="..." />
+            <marker date="1530501151538" expanded="true" signature="1047:1677" ph="..." />
           </folding>
         </state>
       </provider>
@@ -548,10 +549,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/devops/apps/ServerAccount/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="32" column="22" lean-forward="true" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="31" />
+        <state relative-caret-position="311">
+          <caret line="33" column="22" lean-forward="true" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
+            <marker date="1530501151538" expanded="true" signature="503:1722" ph="..." />
+            <marker date="1530501151538" expanded="true" signature="1047:1677" ph="..." />
           </folding>
         </state>
       </provider>
