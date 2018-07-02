@@ -30,7 +30,11 @@ def Application_account(request):
         response['error_num'] = 0
     else:
         account.objects.create(name="%s" % account_name, passwd="%s" % md5passwd, email="%s" % account_email,ip="%s" % application_ip, check=0)
+<<<<<<< HEAD
         url = 'http://127.0.0.1:8080/sendmail/api/?message=%s申请%s&con=likun@guoshengtianfeng.com&header=服务器账号申请'%(account_email,application_ip)
+=======
+        url = 'http://devops:8000/sendmail/api/?message=%s申请%s&con=likun@guoshengtianfeng.com&header=服务器账号申请'%(account_email,application_ip)
+>>>>>>> 276f73e25e8eaa505d8466a5e32f70de976b37cd
         s = requests.session()
         s.get(url=url)
         response['msg']="申请成功,申请信息会发送给管理员"
