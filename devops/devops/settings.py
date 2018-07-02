@@ -28,7 +28,7 @@ SECRET_KEY = 'pcb$c!_6luzanqhscf7fb&-sk7=0ba44bhy^h^u$t5=3$8xi=a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
