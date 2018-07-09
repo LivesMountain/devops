@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'devops.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ansible',
+        'NAME': 'devops',
         'USER':'root',
-        'PASSWORD':'123',
-        'HOST':'192.168.37.150',
+        'PASSWORD':'Wangxiaobao,123456',
+        'HOST':'172.17.17.3',
         'PORT':'3306',
     }
 }
