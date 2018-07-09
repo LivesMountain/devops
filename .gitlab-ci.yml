@@ -28,7 +28,7 @@ package:
   script:
     - ls
     - ip a
-    - DOCKER_REPO=${CI_REGISTRY}/${PROJECT_GROUP}/${PROJECT_NAME}:${CI_BUILD_REF_NAME}
+    - DOCKER_REPO=${DOCKER_REGISTRY}/${PROJECT_GROUP}/${PROJECT_NAME}:${CI_BUILD_REF_NAME}
     - echo ${DOCKER_REPO}
     # build docker image
     - docker build -t ${DOCKER_REPO} .
