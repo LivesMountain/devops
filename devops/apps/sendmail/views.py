@@ -21,7 +21,7 @@ def send(con,message,header):#发送邮件
     msg['Subject'] = Header(u'%s'%header).encode("utf-8")
     server = smtplib.SMTP(smtp_server, smtp_port)
     server.starttls()
-    server.set_debuglevel(1)
+    # server.set_debuglevel(1)
     server.login(from_addr, password)
     server.sendmail(from_addr, to_addr, msg.as_string())
     server.quit()

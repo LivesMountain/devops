@@ -7,7 +7,7 @@ class account(models.Model):
     passwd=models.CharField(max_length=100,verbose_name=u'密码')
     email=models.EmailField()
     ip=models.GenericIPAddressField()
-    check=models.BooleanField()
+    user_check=models.BooleanField()
     class Meta:
         verbose_name = 'account_information'
         verbose_name_plural = verbose_name

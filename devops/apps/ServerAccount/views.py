@@ -3,6 +3,7 @@ from django.http import Http404, JsonResponse
 from .models import *
 import json
 import hashlib
+import base64
 from django.http import HttpResponse
 from decimal import Decimal
 from django.core.paginator import Paginator, InvalidPage, EmptyPage, PageNotAnInteger
@@ -18,10 +19,7 @@ def Application_account(request):
     account_email=request.GET['email']
     account_passwd=request.GET['passwd']
     application_ip=request.GET['ip']
-    login_date = 'wangxiaobao%s'%account_passwd
-    m2 = hashlib.md5()
-    m2.update(login_date.encode("utf8"))
-    md5passwd = m2.hexdigest()
+
     informations=account.objects.filter(email="%s"%account_email).filter(ip="%s"%application_ip)
     print(account.objects.all())
     response={}
@@ -29,7 +27,7 @@ def Application_account(request):
         response['msg']="你已有账号在该机器"
         response['error_num'] = 0
     else:
-        account.objects.create(name="%s" % account_name, passwd="%s" % md5passwd, email="%s" % account_email,ip="%s" % application_ip, check=0)
+        account.objects.create(name="%s" % account_name, passwd="%s" % account_passwd, email="%s" % account_email,ip="%s" % application_ip, user_check=0)
         url = 'http://127.0.0.1:8080/sendmail/api/?message=%s申请%s&con=likun@guoshengtianfeng.com&header=服务器账号申请'%(account_email,application_ip)
         s = requests.session()
         s.get(url=url)
