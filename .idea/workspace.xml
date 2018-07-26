@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d075f3b5-e456-46f2-8fcd-cfc4640c865a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/devops/apps/ServerAccount/sendmail.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/shell_ansible.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/usermanagement.rar" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" afterPath="$PROJECT_DIR$/Dockerfile" />
-      <change beforePath="$PROJECT_DIR$/devops/apps/ServerAccount/admin.py" afterPath="$PROJECT_DIR$/devops/apps/ServerAccount/admin.py" />
-      <change beforePath="$PROJECT_DIR$/devops/apps/ServerAccount/cron.py" afterPath="$PROJECT_DIR$/devops/apps/ServerAccount/cron.py" />
-      <change beforePath="$PROJECT_DIR$/devops/apps/ServerAccount/migrations/0001_initial.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/devops/apps/ServerAccount/models.py" afterPath="$PROJECT_DIR$/devops/apps/ServerAccount/models.py" />
-      <change beforePath="$PROJECT_DIR$/devops/apps/ServerAccount/views.py" afterPath="$PROJECT_DIR$/devops/apps/ServerAccount/views.py" />
-      <change beforePath="$PROJECT_DIR$/devops/apps/sendmail/__init__.py" afterPath="$PROJECT_DIR$/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/devops/apps/sendmail/admin.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/devops/apps/sendmail/apps.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/devops/apps/sendmail/migrations/__init__.py" afterPath="$PROJECT_DIR$/conf.py" />
-      <change beforePath="$PROJECT_DIR$/devops/apps/sendmail/models.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/devops/apps/sendmail/tests.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/devops/apps/sendmail/urls.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/devops/apps/sendmail/views.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/devops/cron_mysql.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/devops/devops/settings.py" afterPath="$PROJECT_DIR$/devops/devops/settings.py" />
-      <change beforePath="$PROJECT_DIR$/devops/devops/urls.py" afterPath="$PROJECT_DIR$/devops/devops/urls.py" />
-    </list>
+    <list default="true" id="d075f3b5-e456-46f2-8fcd-cfc4640c865a" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -162,7 +140,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-277" />
     <option name="y" value="169" />
     <option name="width" value="1932" />
@@ -392,7 +370,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-277" y="169" width="1932" height="977" extended-state="1" />
+    <frame x="-277" y="169" width="1932" height="977" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15892291" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
