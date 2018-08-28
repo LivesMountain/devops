@@ -1,0 +1,10 @@
+- hosts: all
+  vars:
+     zabbix_serverip: 172.17.17.3 # zabbix 服务器IP
+     zabbix_activeip: 172.17.17.3 # zabbix 服务器IP
+     agent_ip: '{{ ansible_eth0.ipv4.address }}' # 客户端IP 根据实际情况修改自己的网卡名字eth0 改成自己服务器
+     hostname: '{{ ansible_hostname }}'
+  roles:
+    - zabbix_agent
+  become: true
+  become_method: sudo

@@ -1,0 +1,3 @@
+- name: restart nagios
+  shell: /etc/init.d/nagios reload
+  delegate_to: 10.171.80.38

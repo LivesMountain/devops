@@ -3,6 +3,7 @@ from django.http import JsonResponse
 from .models import *
 from .sendmail import sendmail
 import re
+from conf import config as CONFIG
 
 def check_password(passwd):
     if re.match(r'^(?=.*[A-Za-z])(?=.*[0-9])\w{6,}$',passwd):
@@ -21,6 +22,7 @@ def check_email(mail):
     else:
         return False
 # Create your views here
+
 def index(request):
     return render(request, "base.html")
 
@@ -42,7 +44,7 @@ def Application_account(request):
 
                 account.objects.create(name="%s" % account_name, passwd="%s" % account_passwd, email="%s" % account_email,ip="%s" % application_ip, user_check=0)
                 account_apply.objects.create(name="%s" % account_name, passwd="%s" % account_passwd, email="%s" % account_email,ip="%s" % application_ip, user_check=0)
-                sm = sendmail("%s申请%s"%(account_email,application_ip), "likun@guoshengtianfeng.com", "服务器账号申请")
+                sm = sendmail("%s申请%s"%(account_email,application_ip), CONFIG.ADMIN_MAIL, "服务器账号申请")
                 sm.send()
                 response['msg']="申请成功,申请信息会发送给管理员"
                 response['error_num'] = 0

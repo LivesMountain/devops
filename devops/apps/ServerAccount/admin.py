@@ -2,7 +2,8 @@
 from django.contrib import admin
 from .models import *
 from .sendmail import sendmail
-
+from .shell_ansible import *
+from extra_apps.ansible_api import ANSRunner
 
 class accountAdmin(admin.ModelAdmin):
     list_display = ('name','email','ip','user_check')
@@ -26,6 +27,8 @@ class accountApplyadmin(admin.ModelAdmin):
     list_filter = ('user_check',)
     # list_editable = ('check',)
     # print(account.objects.all())
+
+
     def delete_selected(self, request, queryset):
         for o in queryset.all():
             o.delete()
@@ -34,13 +37,38 @@ class accountApplyadmin(admin.ModelAdmin):
     delete_selected.short_description = '我拒绝'
 
     def agree(self, request,queryset):
+
         queryset.all().update(user_check=1)
+        hosts = []
+
         for o in queryset.all():
+            host={}
             account.objects.filter(email="%s"%o.email).filter(ip="%s"%o.ip).update(user_check=1)
-            sm = sendmail('你的服务器：%s账号申请已通过\n账号会在1分钟内添加成功，若1分钟后登录不了，请联系管理员' % (o.ip), o.email, '服务器账号申请已通过')
-            sm.send()
+            host['username'] = 'likun'
+            host['password'] = '123'
+            host['ip'] = o.ip
+            host['port'] = '22'
+            hosts.append(host)
+        resource = {
+            "all": {
+                "hosts": hosts
+                ,
+                "vars":
+                    {'name':o.name,'password':o.passwd,'hosts':o.ip}
+            }
+        }
+        rbt=ANSRunner(resource)
+        rbt.run_playbook(playbook_path='/etc/ansible/usermanagement.yml')
+        # check_account=connect(o.name, o.ip, o.passwd)
+        sm = sendmail('你的服务器：%s账号申请已通过\n账号会在1分钟内添加成功，若1分钟后登录不了，请联系管理员' % (o.ip), o.email, '服务器账号申请已通过')
+        sm.send()
+
+
     agree.short_description = '我同意'
     actions = ['delete_selected','agree']
+
+
+
 
 admin.site.register(account_apply,accountApplyadmin)
 admin.site.register(account, accountAdmin)

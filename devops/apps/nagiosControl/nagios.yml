@@ -1,0 +1,5 @@
+- hosts: all
+  roles:
+  - nagios
+  become: true
+  become_method: sudo

@@ -1,0 +1,5 @@
+- name: copy basis_conf to client
+  copy: src=basis_conf.sh dest=/tmp/basis_conf.sh
+- name: conf nagios server
+  command: /bin/bash /tmp/basis_conf.sh {{Responsible}} {{Business_name}} {{url}}
+  delegate_to: 127.0.0.1

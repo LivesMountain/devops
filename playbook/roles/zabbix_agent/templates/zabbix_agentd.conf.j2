@@ -1,0 +1,18 @@
+LogFile=/usr/local/zabbix/zabbix_agentd.log
+Server=172.17.17.3
+ServerActive=172.17.17.3
+ListenIP={{agent_ip}}
+Hostname={{hostname}}
+RefreshActiveChecks=60
+BufferSend=5
+BufferSize=100
+MaxLinesPerSecond=100
+UnsafeUserParameters=1
+Timeout=30
+LogFileSize=1
+DebugLevel=3
+EnableRemoteCommands=0
+LogRemoteCommands=0
+Timeout=30
+Include= /usr/local/zabbix/etc/zabbix_agentd.conf.d/*.conf
+

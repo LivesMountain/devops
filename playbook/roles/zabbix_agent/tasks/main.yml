@@ -1,0 +1,35 @@
+- name: copy zabbix_tar_gz to client
+  copy: src=zabbix-3.0.17.tar.gz dest=/tmp/zabbix-3.0.17.tar.gz
+- name: copy zabbix_tar_gz to client
+  copy: src=install_zabbix.sh dest=/tmp/install_zabbix.sh
+- name: copy zabbix_tar_gz to client
+  copy: src=disk_status.tar.gz dest=/tmp/disk_status.tar.gz
+
+- name: centos install gcc
+  yum: name=gcc state=latest
+  when: ansible_distribution == "CentOS"
+
+- name: centos install gcc
+  apt: name={{ item }} state=latest
+  with_items:
+    - gcc
+    - make
+  when: ansible_distribution == "Ubuntu"
+
+- name: groupadd zabbix
+  group: name=zabbix state=present
+
+- name: useradd zabbix
+  user: name=zabbix state=present groups=zabbix
+
+- name: install zabbix
+  shell: /bin/bash /tmp/install_zabbix.sh
+
+- name: up zabbix-agent file client
+  template: src=zabbix_agentd.conf.j2 dest=/usr/local/zabbix/etc/zabbix_agentd.conf
+  notify:
+  - restart zabbix
+
+- name: start zabbix_agentd
+  shell: /etc/init.d/zabbix_agentd restart
+
