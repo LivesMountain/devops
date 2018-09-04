@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+</head>
+<body>
+{% if user.is_authenticated %}
+
+<a class="button-success pure-button">{{ user.username }}</a>
+<a class="button-success pure-button" href="/ansibleControl">ansible</a>
+<a class="button-success pure-button" href="/nagiosControl/">nagios</a>
+<a class="button-success pure-button" href="/user/logout/">退出</a>
+{% else %}
+{% block content %}
+<div>
+        <form action="/user/login/" method="POST">
+            <h2>Please sign in </h2>
+            <input type="text" name="username" />
+            <input type="password" name="password" />
+            <button type="submit">Sign in </button>
+            <p style="color: red">{{ login_error }}</p>
+        </form>
+</div>
+<a class="button-success pure-button" href="/user/register/">注册</a>
+{% endblock %}
+{% endif %}
+
+
+</body>
+</html>

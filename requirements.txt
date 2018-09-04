@@ -2,3 +2,4 @@ django===1.11.7
 pymysql
 requests
 django-crontab
+ansible=2.4

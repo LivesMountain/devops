@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends 'user_index.html' %}
+
+{% block content %}
+    <h1>注册页面</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+{#        <!--{% csrf_token %}-->#}
+        {{uf.as_p}}
+        <input type="submit" value="OK" />
+    </form>
+{#    <a href="/user/login">登陆</a>#}
+{% endblock %}

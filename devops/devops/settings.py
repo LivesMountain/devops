@@ -1,33 +1,25 @@
 import os
 import sys
 #加入conf
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-sys.path.append(BASE_DIR)
-
-from conf import config as CONFIG
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-#加入工作app的路径
 sys.path.insert(0,os.path.join(BASE_DIR,'apps'))
 sys.path.insert(0,os.path.join(BASE_DIR,'extra_apps'))
-DEBUG = CONFIG.DEBUG
 
-print(DEBUG)
 print(sys.path)
-APPS_DIR = os.path.join(BASE_DIR, 'apps')
 
 print("...............................",BASE_DIR)
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
-
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0,os.path.join(BASE_DIR))
+from conf import config as CONFIG
+DEBUG = CONFIG.DEBUG
 # SECURITY WARNING: keep the secret key used in  production secret!
 SECRET_KEY = 'pcb$c!_6luzanqhscf7fb&-sk7=0ba44bhy^h^u$t5=3$8xi=a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = CONFIG.DEBUG or False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = CONFIG.ALLOWED_HOSTS
 
 
 # Application definition
@@ -40,7 +32,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_crontab',
-    'apps.ServerAccount',
+    'apps.ansibleControl',
+    'apps.nagiosControl',
+    'apps.user',
 
 ]
 
@@ -80,21 +74,12 @@ WSGI_APPLICATION = 'devops.wsgi.application'
 
 DATABASES = {
     'default': {
-<<<<<<< HEAD
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'devops',
-        'USER':'root',
-        'PASSWORD':'Wangxiaobao,123456',
-        'HOST':'172.17.17.3',
-        'PORT':'3306',
-=======
         'ENGINE': 'django.db.backends.{}'.format(CONFIG.DB_ENGINE),
         'NAME': CONFIG.DB_NAME,
         'USER':CONFIG.DB_USER,
         'PASSWORD':CONFIG.DB_PASSWORD,
         'HOST':CONFIG.DB_HOST,
         'PORT':CONFIG.DB_PORT,
->>>>>>> 修改用户表
     }
 }
 
@@ -139,3 +124,4 @@ STATIC_URL = '/static/'
 CRONJOBS = [
     ('*/1 * * * *', 'apps.ServerAccount.cron.my_scheduled_job'),
 ]
+LOGIN_URL = '/user/login'
